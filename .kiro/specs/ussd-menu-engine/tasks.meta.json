@@ -1,0 +1,605 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Configure Vite, Vitest, and fast-check": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173407397
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173419784
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173969479
+      }
+    ],
+    "1.2 Create shared state builders and mock AI providers for tests": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173409370
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173977599
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174190897
+      }
+    ],
+    "2.1 Create `src/engine/paginate.js`": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173410967
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173977738
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174191705
+      }
+    ],
+    "2.2 Write focused pagination unit tests": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173411126
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174206192
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174471296
+      }
+    ],
+    "2.3 Write the fast-check test for Property 6: Lossless Ordered AI Pagination": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173411219
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174206410
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174471596
+      }
+    ],
+    "3.1 Create `src/engine/quiz-bank.js`": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173411612
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173977900
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174194071
+      }
+    ],
+    "3.2 Write quiz-bank unit tests, including exhaustive screen-length coverage": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173411745
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174206596
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174471990
+      }
+    ],
+    "3.3 Create `src/engine/menus.js`": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173411861
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174206753
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174472164
+      }
+    ],
+    "3.4 Write renderer and fixed-copy unit tests": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173411956
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174478935
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174644041
+      }
+    ],
+    "4.1 Create the synchronous core of `src/engine/ussd.js`": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412052
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174650755
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174859987
+      }
+    ],
+    "4.2 Write lifecycle, immutability, menu-routing, and navigation unit tests": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412184
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174867703
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175475221
+      }
+    ],
+    "4.3 Write the fast-check test for Property 2: Exact Session Start and Restart Isolation": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412288
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174867896
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175475458
+      }
+    ],
+    "4.4 Write the fast-check test for Property 3: Menu Input Alphabet and Invalid-Choice Stability": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412391
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175484983
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175672618
+      }
+    ],
+    "4.5 Write the fast-check test for Property 4: Exact Main Menu Routing": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412540
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175679074
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175832097
+      }
+    ],
+    "5.1 Extend `src/engine/ussd.js` with exact question and answer behavior": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412728
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175842054
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175963262
+      }
+    ],
+    "5.2 Write AI transition unit and integration tests with passed-in mocks": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412809
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175977092
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176112028
+      }
+    ],
+    "5.3 Write the fast-check test for Property 5: Question Prompt Control Precedence": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412901
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175977360
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176112243
+      }
+    ],
+    "5.4 Write the fast-check test for Property 7: AI Page-Control Semantics": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173412990
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175977834
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176112401
+      }
+    ],
+    "6.1 Extend `src/engine/ussd.js` with deterministic quiz transitions": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413078
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176126279
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176325889
+      }
+    ],
+    "6.2 Write quiz transition and score-ledger unit tests": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413170
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176340586
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176516080
+      }
+    ],
+    "6.3 Write the fast-check test for Property 8: Quiz Category Preservation and Five-Question Bounds": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413269
+      },
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176340829
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176758073
+      }
+    ],
+    "6.4 Write the fast-check test for Property 9: Quiz Feedback Gates Progress": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413372
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176776152
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176929173
+      }
+    ],
+    "6.5 Write the fast-check test for Property 10: Quiz Completion and Repeat Semantics": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413531
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176936847
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177054116
+      }
+    ],
+    "6.6 Write the fast-check test for Property 11: Integer Session Score and Duplicate Prevention": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413649
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177060876
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177192768
+      }
+    ],
+    "7.1 Complete score and local-tip transitions in `src/engine/ussd.js`": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413763
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177203458
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177422496
+      }
+    ],
+    "7.2 Write Haunt Score and Exam Survival unit/integration tests": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413893
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177438775
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177577495
+      }
+    ],
+    "7.3 Write the fast-check test for Property 12: Haunt Score Display and Controls": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173413970
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177438972
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177578564
+      }
+    ],
+    "7.4 Write the fast-check test for Property 13: Exact Local Exam Tips Without AI": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173414065
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177439499
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177579740
+      }
+    ],
+    "8.1 Write the fast-check test for Property 1: Public Contract, Deep Immutability, and Determinism": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173414169
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177596282
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177841049
+      }
+    ],
+    "8.2 Write the fast-check test for Property 14: Universal Screen Protocol": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173414279
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177596459
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177841216
+      }
+    ],
+    "8.3 Add complete engine integration and serialization tests": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173414394
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177596652
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177841411
+      }
+    ],
+    "9. Final checkpoint": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794173414574
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177849887
+      },
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177974359
+      }
+    ],
+    "1. Set up the JavaScript project and reusable test support": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174191094
+      }
+    ],
+    "2. Implement suffix-aware lossless pagination": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174471746
+      }
+    ],
+    "3. Implement local content, quiz data, and screen rendering": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794174644214
+      }
+    ],
+    "4. Implement session lifecycle, navigation helpers, and main-menu routing": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794175832230
+      }
+    ],
+    "5. Implement question prompts and AI answer transitions": [
+      {
+        "executionId": "9be34630-20df-4c03-861d-744f875349bf",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794176112528
+      }
+    ],
+    "6. Implement quiz rounds, feedback gates, results, and scoring ledger": [
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177192936
+      }
+    ],
+    "7. Implement Haunt Score and Exam Survival navigation": [
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177579843
+      }
+    ],
+    "8. Verify the complete public contract and reachable-state protocol": [
+      {
+        "executionId": "b194723e-1c24-44a8-a442-316643ae2fa8",
+        "chatSessionId": "sess_5cdc57f0-d66f-46fd-ad32-a2ae3720bbab",
+        "timestamp": 1794177841514
+      }
+    ]
+  }
+}
