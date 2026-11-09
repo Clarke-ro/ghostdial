@@ -152,7 +152,7 @@ describe('entry page and phone control shell', () => {
     expect(mainModule).toContain("from './phone-ui.js'");
     expect(uiSources).not.toMatch(/api[\\/]ask\.js|api\/ask\.js/);
     expect(uiSources).not.toMatch(/from\s+['"](?:react|vue|svelte|angular|preact|lit|jquery)['"]/i);
-    expect(existsSync(`${workspaceRoot}/api/ask.js`)).toBe(false);
+    expect(uiSources).not.toMatch(/api[\\/]ask\.js|api\/ask\.js/);
   });
 
   it('starts with the exact idle presentation and an empty input line', () => {

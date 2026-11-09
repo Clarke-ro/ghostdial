@@ -1,0 +1,126 @@
+{
+  "pbtResults": {
+    "1.3 Write Property 1: Server Request Validation Is an Exact Allowlist": {
+      "status": "passed",
+      "lastRunTimestamp": 1794253204016
+    },
+    "1.4 Write Property 2: Error Responses Are Safe": {
+      "status": "passed",
+      "lastRunTimestamp": 1794253210740
+    },
+    "1.5 Write Property 3: Candidate Extraction Accepts Only Text Parts": {
+      "status": "passed",
+      "lastRunTimestamp": 1794253216496
+    },
+    "1.6 Write Property 4: Answer Normalization Enforces the Plain-Text Contract": {
+      "status": "passed",
+      "lastRunTimestamp": 1794253196729
+    }
+  },
+  "executionHistory": {
+    "1. Implement the server-only Gemini boundary": [
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794228742504
+      },
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238320182
+      }
+    ],
+    "1.1 Create `api/ask.js`": [
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238331668
+      }
+    ],
+    "1.2 Write server handler unit tests": [
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238331874
+      }
+    ],
+    "1.3 Write Property 1: Server Request Validation Is an Exact Allowlist": [
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238332079
+      }
+    ],
+    "1.4 Write Property 2: Error Responses Are Safe": [
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238332228
+      }
+    ],
+    "1.5 Write Property 3: Candidate Extraction Accepts Only Text Parts": [
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238332449
+      }
+    ],
+    "1.6 Write Property 4: Answer Normalization Enforces the Plain-Text Contract": [
+      {
+        "executionId": "1d995459-c640-4653-8645-2803cb304677",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238334568
+      }
+    ],
+    "2.1 Create `src/ui/real-ai.js`": [
+      {
+        "executionId": "a239a09c-2170-41b0-90fe-cb02be26b8d4",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794238779130
+      },
+      {
+        "executionId": "a239a09c-2170-41b0-90fe-cb02be26b8d4",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794239861847
+      }
+    ],
+    "2. Implement the browser real-AI provider": [
+      {
+        "executionId": "a239a09c-2170-41b0-90fe-cb02be26b8d4",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794239861951
+      }
+    ],
+    "3.1 Update `src/ui/main.js`": [
+      {
+        "executionId": "33f89d08-bb3b-4962-a432-be3cb9ca157d",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794239908939
+      },
+      {
+        "executionId": "33f89d08-bb3b-4962-a432-be3cb9ca157d",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794241069137
+      }
+    ],
+    "3. Wire deterministic provider selection": [
+      {
+        "executionId": "33f89d08-bb3b-4962-a432-be3cb9ca157d",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794241069374
+      }
+    ],
+    "5. Final checkpoint": [
+      {
+        "executionId": "fb6d890f-8a46-4695-9a15-e4a51629697f",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794241894721
+      },
+      {
+        "executionId": "fb6d890f-8a46-4695-9a15-e4a51629697f",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794257533782
+      }
+    ]
+  }
+}

@@ -169,7 +169,13 @@ describe('complete browser UI boundary', () => {
       const keypad = document.querySelector('.keypad');
       const characterKeys = [...document.querySelectorAll('.character-key')];
 
-      expect(existsSync(apiPath)).toBe(false);
+      expect(Object.values(
+        import.meta.glob('../../src/ui/*.js', {
+          eager: true,
+          import: 'default',
+          query: '?raw',
+        }),
+      ).join('\n')).not.toMatch(/api[\\/]ask\.js|api\/ask\.js/);
       expect(document.querySelectorAll('script[type="module"][src="/src/ui/main.js"]')).toHaveLength(1);
       expect(root.children).toHaveLength(1);
       expect(document.querySelectorAll('.retro-phone')).toHaveLength(1);

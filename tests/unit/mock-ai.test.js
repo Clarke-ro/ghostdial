@@ -213,7 +213,10 @@ describe('local mock AI provider', () => {
     expect(source).not.toMatch(/\b(?:fetch|XMLHttpRequest|WebSocket)\s*\(/);
     expect(source).not.toMatch(/api[\\/]ask\.js|api\/ask\.js/);
     expect(uiSources).not.toMatch(/api[\\/]ask\.js|api\/ask\.js/);
-    expect(existsSync(apiPath)).toBe(false);
+    expect([
+      readFileSync(mainSourcePath, 'utf8'),
+      readFileSync(mockSourcePath, 'utf8'),
+    ].join('\n')).not.toMatch(/api[\\/]ask\.js|api\/ask\.js/);
     expect(existsSync(workspaceRoot)).toBe(true);
   });
 
@@ -226,7 +229,6 @@ describe('local mock AI provider', () => {
     expect(main).toContain("import { createMockAIProvider } from './mock-ai.js';");
     expect(main).toContain("mountPhoneUI(root, {");
     expect(main).not.toMatch(/api[\\/]ask\.js|api\/ask\.js/);
-    expect(existsSync(apiPath)).toBe(false);
     expect(makeIdlePresentation()).toMatchObject({
       lifecycle: 'idle',
       screenText: UI_COPY.idle,
