@@ -1,5 +1,50 @@
 {
-  "pbtResults": {},
+  "pbtResults": {
+    "8.1 Write Property 1: Bounded, Exact Input Buffer": {
+      "status": "passed",
+      "lastRunTimestamp": 1794223161902
+    },
+    "8.3 Write Property 3: Keyboard Classification and Default Behavior": {
+      "status": "passed",
+      "lastRunTimestamp": 1794222994414
+    },
+    "8.6 Write Property 6: Disabled-State Action Invariance": {
+      "status": "passed",
+      "lastRunTimestamp": 1794217487155
+    },
+    "8.4 Write Property 4: Submission Snapshot and Single Invocation": {
+      "status": "passed",
+      "lastRunTimestamp": 1794217488646
+    },
+    "8.5 Write Property 5: Result State Adoption and Safe Text Projection": {
+      "status": "passed",
+      "lastRunTimestamp": 1794222995893
+    },
+    "8.2 Write Property 2: Question-State Multi-Tap Sequence": {
+      "status": "passed",
+      "lastRunTimestamp": 1794217489405
+    },
+    "8.8 Write Property 8: Mock Provider Determinism": {
+      "status": "passed",
+      "lastRunTimestamp": 1794223184656
+    },
+    "8.11 Write Property 11: Mute Changes Audio Only": {
+      "status": "passed",
+      "lastRunTimestamp": 1794223202297
+    },
+    "8.7 Write Property 7: Recoverable Rejection Preservation": {
+      "status": "passed",
+      "lastRunTimestamp": 1794223178569
+    },
+    "8.9 Write Property 9: Accepted Key Audio Is Gated and Isolated": {
+      "status": "passed",
+      "lastRunTimestamp": 1794223191034
+    },
+    "8.10 Write Property 10: Loading Tone Follows Promise Lifecycle": {
+      "status": "passed",
+      "lastRunTimestamp": 1794223198885
+    }
+  },
   "executionHistory": {
     "1.1 Create the root entry page and UI module entry": [
       {
@@ -208,6 +253,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794181973189
+      },
+      {
+        "executionId": "8e3f87b5-7d77-4efe-8a82-fe26c3923a8d",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222625458
+      },
+      {
+        "executionId": "8e3f87b5-7d77-4efe-8a82-fe26c3923a8d",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794223230189
       }
     ],
     "2. Implement safe LCD rendering": [
@@ -377,6 +432,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182998018
+      },
+      {
+        "executionId": "b8bebf8a-d91d-4579-8a13-9ff6df019dd2",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794215663854
+      },
+      {
+        "executionId": "b8bebf8a-d91d-4579-8a13-9ff6df019dd2",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794216682070
       }
     ],
     "8.1 Write Property 1: Bounded, Exact Input Buffer": [
@@ -384,6 +449,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182998201
+      },
+      {
+        "executionId": "37e3bf3d-46fc-4fe5-8929-2bd189ca8314",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217000020
+      },
+      {
+        "executionId": "37e3bf3d-46fc-4fe5-8929-2bd189ca8314",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217188474
       }
     ],
     "8.2 Write Property 2: Question-State Multi-Tap Sequence": [
@@ -391,6 +466,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182998403
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217255937
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218068828
       }
     ],
     "8.3 Write Property 3: Keyboard Classification and Default Behavior": [
@@ -398,6 +483,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182998569
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217256151
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218069406
       }
     ],
     "8.4 Write Property 4: Submission Snapshot and Single Invocation": [
@@ -405,6 +500,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182998737
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217256314
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218069737
       }
     ],
     "8.5 Write Property 5: Result State Adoption and Safe Text Projection": [
@@ -412,6 +517,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182998923
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217256490
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218069904
       }
     ],
     "8.6 Write Property 6: Disabled-State Action Invariance": [
@@ -419,6 +534,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182999109
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217256727
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218070053
       }
     ],
     "8.7 Write Property 7: Recoverable Rejection Preservation": [
@@ -426,6 +551,36 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182999290
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217256967
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218802205
+      },
+      {
+        "executionId": "eb862872-8edb-49f7-80e0-cde145be0294",
+        "chatSessionId": "sess_747c09d0-7af5-4c2a-b680-20276a2bf57b",
+        "timestamp": 1794219418695
+      },
+      {
+        "executionId": "eb862872-8edb-49f7-80e0-cde145be0294",
+        "chatSessionId": "sess_747c09d0-7af5-4c2a-b680-20276a2bf57b",
+        "timestamp": 1794219919438
+      },
+      {
+        "executionId": "42992c36-c23c-4079-a271-800861ba345b",
+        "chatSessionId": "sess_e9007025-cabc-4a00-87d7-7891a4cf6056",
+        "timestamp": 1794219958270
+      },
+      {
+        "executionId": "42992c36-c23c-4079-a271-800861ba345b",
+        "chatSessionId": "sess_e9007025-cabc-4a00-87d7-7891a4cf6056",
+        "timestamp": 1794222309507
       }
     ],
     "8.8 Write Property 8: Mock Provider Determinism": [
@@ -433,6 +588,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182999454
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217257167
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218802527
       }
     ],
     "8.9 Write Property 9: Accepted Key Audio Is Gated and Isolated": [
@@ -440,6 +605,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182999682
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217257302
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218802901
       }
     ],
     "8.10 Write Property 10: Loading Tone Follows Promise Lifecycle": [
@@ -447,6 +622,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182999852
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217257611
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218803072
       }
     ],
     "8.11 Write Property 11: Mute Changes Audio Only": [
@@ -454,6 +639,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794183000058
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217257765
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218803231
       }
     ],
     "8.12 Write property coverage for Back/Home submission invariants": [
@@ -461,6 +656,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794183000265
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794217258460
+      },
+      {
+        "executionId": "0b9166bc-6459-4ccf-bf44-93e171033a61",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794218803378
       }
     ],
     "9.1 Add audio-focused controller integration tests": [
@@ -468,6 +673,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794183000467
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222342323
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222544305
       }
     ],
     "9.2 Add connecting-tone lifecycle integration tests": [
@@ -475,6 +690,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794183000692
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222342713
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222544550
       }
     ],
     "9.3 Add browser smoke/static checks for the audio boundary": [
@@ -482,6 +707,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794183000916
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222343263
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222544694
       }
     ],
     "9.5 Add Back/Home navigation integration tests": [
@@ -489,6 +724,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794183001139
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222343614
+      },
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222544854
       }
     ],
     "1. Create the browser entry and phone control shell": [
@@ -503,6 +748,27 @@
         "executionId": "5339a663-e502-4913-96aa-b12922ba0b27",
         "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
         "timestamp": 1794214748394
+      }
+    ],
+    "7. Complete entry wiring and browser integration": [
+      {
+        "executionId": "b8bebf8a-d91d-4579-8a13-9ff6df019dd2",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794216682316
+      }
+    ],
+    "8. Add fast-check properties aligned one-to-one with the design": [
+      {
+        "executionId": "eb862872-8edb-49f7-80e0-cde145be0294",
+        "chatSessionId": "sess_747c09d0-7af5-4c2a-b680-20276a2bf57b",
+        "timestamp": 1794219919592
+      }
+    ],
+    "9. Verify audio integration and complete regression coverage": [
+      {
+        "executionId": "4b19b3aa-540e-42b2-a6c4-f1ade1cd431c",
+        "chatSessionId": "sess_b622c2cc-4b0a-405e-90ca-7afa609d434f",
+        "timestamp": 1794222544998
       }
     ]
   }

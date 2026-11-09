@@ -128,117 +128,117 @@ Implement the browser-based GhostDial phone interface as plain JavaScript, HTML,
     - Assert connecting tone start/stop counts for Promise entry and every loading exit, and prove mute toggles do not alter engine state, transition arguments, input, lifecycle, or timers.
     - _Requirements: 1.4, 1.5, 1.6, 3.1, 3.2, 3.3, 3.4, 3.8, 3.9, 3.10, 3.11, 4.9, 4.10, 4.11, 4.12, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 6.11, 6.12, 6.13, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 7.10, 8.1, 8.7_
 
-- [ ] 7. Complete entry wiring and browser integration
+- [x] 7. Complete entry wiring and browser integration
   - [x] 7.1 Wire `src/ui/main.js` to the real engine, mock provider, audio service, and mounted controller
     - Import only `next` from `src/engine/ussd.js`, `createMockAIProvider`, `createAudioService`, and `mountPhoneUI`.
     - Mount once under `#app` after the document is ready, start idle without calling the engine or creating `AudioContext`, and pass the injectable audio service into the controller.
     - Ensure no `api/ask.js`, network endpoint, framework runtime, or duplicated menu/screen logic enters the module graph.
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.7, 2.1, 3.1, 8.1, 8.5, 8.6, 8.7_
 
-  - [~] 7.2 Write browser-bound integration tests for the complete UI boundary
+  - [x] 7.2 Write browser-bound integration tests for the complete UI boundary
     - Load `index.html` with the API module absent and assert idle startup, exact DOM structure, keyboard and keypad interaction, safe text rendering, and engine invocation arguments.
     - Use deferred transitions to verify loading is visible before settlement, controls are disabled, Back/Home are disabled without beeps or submissions, fulfillment adopts results, rejection preserves state with fixed failure copy, and no duplicate submissions occur.
     - Use an active question prompt with stale input and pending keypad-`0` multi-tap state to verify keypad `0` still produces U+0020 SPACE, while Back and Home submit exactly `0` and `00` through the existing transition path and invoke it once each.
     - Use fake timers and the real mock provider/engine to verify the 1,200 ms delay range, at least two answer pages, END text through 1,499 ms, reset at 1,500 ms, and no input during disabled states.
     - _Requirements: 1.3, 1.4, 1.5, 1.6, 2.1, 3.1, 3.3, 3.5, 3.6, 3.7, 4.10, 4.11, 4.12, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.9, 6.10, 6.11, 6.12, 6.13, 7.1, 7.2, 7.3, 7.6, 7.7, 7.8, 7.9, 8.2, 8.3, 8.6, 8.7_
 
-- [ ] 8. Add fast-check properties aligned one-to-one with the design
-  - [~] 8.1 Write Property 1: Bounded, Exact Input Buffer
+- [x] 8. Add fast-check properties aligned one-to-one with the design
+  - [x] 8.1 Write Property 1: Bounded, Exact Input Buffer
     - Create `tests/property/phone-ui-input.property.test.js` with at least 100 runs over buffers from empty through 160 JavaScript code units, accepted character actions, spaces, punctuation, `*`, `#`, and valid Unicode scalars.
     - Assert exact append-or-no-op behavior, no trimming/reordering/replacement, input-line equality, and pending-character reservation at capacity.
     - **Property 1: Bounded, Exact Input Buffer**
     - **Validates: Requirements 3.4, 3.8, 3.9, 3.10, 4.1, 4.2, 4.3, 5.1**
 
-  - [~] 8.2 Write Property 2: Question-State Multi-Tap Sequence
+  - [x] 8.2 Write Property 2: Question-State Multi-Tap Sequence
     - Create `tests/property/phone-ui-multi-tap.property.test.js` with mapped digits, repeat counts, different labels, held-key repeats, and elapsed times below, at, and above 800 ms.
     - Assert mapping order, wraparound, commit-before-different-input, threshold behavior, pending-state correctness, and the 160-code-unit invariant.
     - **Property 2: Question-State Multi-Tap Sequence**
     - **Validates: Requirements 3.11, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8**
 
-  - [~] 8.3 Write Property 3: Keyboard Classification and Default Behavior
+  - [x] 8.3 Write Property 3: Keyboard Classification and Default Behavior
     - Create `tests/property/phone-ui-keyboard.property.test.js` over printable keys, modifier combinations, Enter, Backspace, unsupported named keys, and empty/non-empty buffers.
     - Assert exact input changes, preservation of pending state for modified keys, zero changes for unsupported keys, and exactly-once default cancellation for handled actions.
     - **Property 3: Keyboard Classification and Default Behavior**
     - **Validates: Requirements 5.1, 5.2, 5.4, 5.5, 5.6, 5.7**
 
-  - [~] 8.4 Write Property 4: Submission Snapshot and Single Invocation
+  - [x] 8.4 Write Property 4: Submission Snapshot and Single Invocation
     - Create `tests/property/phone-ui-submission.property.test.js` over idle/interactive states, complete buffers, question pending output, and serializable engine states.
     - Assert one exact transition call with the beginning state, captured complete input, and stable provider, followed by empty input and cleared pending metadata.
     - **Property 4: Submission Snapshot and Single Invocation**
     - **Validates: Requirements 1.5, 4.10, 4.11, 4.12**
 
-  - [~] 8.5 Write Property 5: Result State Adoption and Safe Text Projection
+  - [x] 8.5 Write Property 5: Result State Adoption and Safe Text Projection
     - Create `tests/property/phone-ui-render.property.test.js` over serializable returned states, screen types, line breaks, markup-like text, and arbitrary input buffers.
     - Assert complete state adoption by reference/value contract, literal text projection without DOM creation or execution, and input-line equality.
     - **Property 5: Result State Adoption and Safe Text Projection**
     - **Validates: Requirements 1.6, 3.4, 3.5, 3.7, 3.8**
 
-  - [~] 8.6 Write Property 6: Disabled-State Action Invariance
+  - [x] 8.6 Write Property 6: Disabled-State Action Invariance
     - Create `tests/property/phone-ui-disabled.property.test.js` over Loading_State and Ended_Pause_State action sequences for keypad, Clear, Call, printable, Enter, and Backspace.
     - Assert zero engine calls and preservation of input and multi-tap state for every disabled action sequence.
     - **Property 6: Disabled-State Action Invariance**
     - **Validates: Requirements 6.5, 6.6, 6.8, 7.3, 7.4, 7.5**
 
-  - [~] 8.7 Write Property 7: Recoverable Rejection Preservation
+  - [x] 8.7 Write Property 7: Recoverable Rejection Preservation
     - Create `tests/property/phone-ui-rejection.property.test.js` over serializable pre-transition engine states and deferred rejection outcomes.
     - Assert Loading_State exit, exact prior state preservation, empty input, fixed failure message, and re-enabled input/submission after rejection.
     - **Property 7: Recoverable Rejection Preservation**
     - **Validates: Requirements 6.9, 6.10, 6.11, 6.12, 6.13**
 
-  - [~] 8.8 Write Property 8: Mock Provider Determinism
+  - [x] 8.8 Write Property 8: Mock Provider Determinism
     - Create `tests/property/mock-ai.property.test.js` over arbitrary modes and complete question strings, using injected deterministic timers.
     - Assert equal requests resolve to equal strings after equal configured delays and that the real engine produces at least two pagination pages from the answer.
     - **Property 8: Mock Provider Determinism**
     - **Validates: Requirements 8.2, 8.3, 8.4**
 
-  - [~] 8.9 Write Property 9: Accepted Key Audio Is Gated and Isolated
+  - [x] 8.9 Write Property 9: Accepted Key Audio Is Gated and Isolated
     - Create `tests/property/phone-ui-audio-input.property.test.js` with recording and no-op/throwing audio services over accepted, disabled, modified, unsupported, and capacity-rejected keypad/keyboard actions.
     - Assert exactly one beep per accepted action, no beep for rejected actions, and identical engine calls, buffers, lifecycle transitions, and timers with audio enabled, disabled, or failing.
     - **Property 9: Accepted Key Audio Is Gated and Isolated**
     - **Validates: Requirements 1.5, 4.1, 4.3, 5.1, 5.2, 5.7, 6.5, 7.3**
 
-  - [~] 8.10 Write Property 10: Loading Tone Follows Promise Lifecycle
+  - [x] 8.10 Write Property 10: Loading Tone Follows Promise Lifecycle
     - Create `tests/property/phone-ui-audio-loading.property.test.js` over synchronous, fulfilling, rejecting, END-producing, cancelled, and destroyed loading outcomes.
     - Assert one connecting start only on Promise Loading_State entry, stop on every loading exit, idempotent stop behavior, and unchanged controller/engine/timer behavior with no-op or throwing audio.
     - **Property 10: Loading Tone Follows Promise Lifecycle**
     - **Validates: Requirements 1.5, 6.1, 6.2, 6.7, 6.8, 6.9, 7.1, 7.3, 7.5**
 
-  - [~] 8.11 Write Property 11: Mute Changes Audio Only
+  - [x] 8.11 Write Property 11: Mute Changes Audio Only
     - Create `tests/property/phone-ui-mute.property.test.js` over lifecycle states and arbitrary mute-toggle sequences, including loading and END pause.
     - Assert only audio mute presentation and accessible state change; engine state, input, pending multi-tap, lifecycle, transition arguments/count, and timers must remain unchanged, while later accepted input follows identical rules.
     - **Property 11: Mute Changes Audio Only**
     - **Validates: Requirements 1.5, 4.9, 6.5, 6.6, 7.3, 7.5**
 
-  - [~] 8.12 Write property coverage for Back/Home submission invariants
+  - [x] 8.12 Write property coverage for Back/Home submission invariants
     - Create `tests/property/phone-ui-navigation-buttons.property.test.js` with at least 100 runs over active CON states, arbitrary stale buffers, pending question-state keypad-`0` output, and lifecycle states including Idle, Loading_State, and Ended_Pause_State.
     - Assert Back and Home clear stale input and pending metadata before exactly one transition call with exact input `0` or `00`, preserve the supplied provider and submission-start state, and never submit keypad `0` as a navigation action.
     - Assert disabled Back/Home actions produce no transition call, no buffer change, no pending-state change, and no key beep; in question views, independent keypad `0` actions remain U+0020 SPACE multi-tap input.
     - **Property 4: Submission Snapshot and Single Invocation; Property 6: Disabled-State Action Invariance; Property 9: Accepted Key Audio Is Gated and Isolated**
     - **Validates: Requirements 1.5, 4.1, 4.2, 4.10, 4.11, 4.12, 6.5, 6.6, 6.8, 7.3, 7.4, 7.5**
 
-- [ ] 9. Verify audio integration and complete regression coverage
-  - [~] 9.1 Add audio-focused controller integration tests
+- [x] 9. Verify audio integration and complete regression coverage
+  - [x] 9.1 Add audio-focused controller integration tests
     - Inject a recording audio fake into a real mounted controller and verify accepted on-screen Character_Key, Call, Clear, printable, Enter, and Backspace actions beep once.
     - Verify ignored/disabled/modified/unsupported/capacity-rejected actions produce no beep; verify mute is operable inside the enclosure during Loading_State without changing engine behavior.
     - _Requirements: 4.9, 4.10, 5.1, 5.2, 5.3, 5.4, 5.6, 5.7, 6.5, 6.6, 7.3, 7.4, 7.5_
 
-  - [~] 9.2 Add connecting-tone lifecycle integration tests
+  - [x] 9.2 Add connecting-tone lifecycle integration tests
     - Use deferred Promise transitions and fake timers to assert connecting tone starts on Loading_State entry and stops on fulfillment, rejection, END handling, destroy, and defensive loading exit.
     - Assert at most one active connecting tone, repeated stops are harmless, and audio service errors cannot alter transition arguments, state, buffers, or timer behavior.
     - _Requirements: 6.2, 6.3, 6.7, 6.8, 6.9, 7.1, 7.5_
 
-  - [~] 9.3 Add browser smoke/static checks for the audio boundary
+  - [x] 9.3 Add browser smoke/static checks for the audio boundary
     - Confirm `audio.js` uses generated oscillator/envelope tones only, has no audio files, `<audio>` elements, network audio, API imports, or engine-state access.
     - Verify default unmuted accessible mute state, inside-enclosure placement, mute toggle behavior, and safe operation when `AudioContext` is absent or autoplay-blocked.
     - _Requirements: 2.1, 2.7, 4.9, 6.2, 6.3, 7.3, 7.5, 8.5_
 
-  - [~] 9.5 Add Back/Home navigation integration tests
+  - [x] 9.5 Add Back/Home navigation integration tests
     - Mount the real phone controller with a recording audio fake, following the design's `phone-ui.js` submission flow and Audio event contract, and an active CON question result; seed stale text plus pending keypad-`0` multi-tap state, and verify Back submits exactly `0` and Home submits exactly `00` through the same transition path with one invocation each.
     - Verify keypad `0` in the question prompt remains a U+0020 SPACE input action, while Back/Home produce no stale-buffer characters and each accepted navigation action produces exactly one key beep.
     - Exercise Idle, Loading_State, and Ended_Pause_State and assert Back/Home are disabled, preserve input and pending state, invoke the engine zero times, and produce no beep; verify the existing Promise/END lifecycle and audio stop behavior remain unchanged.
     - _Requirements: 1.5, 2.1, 4.1, 4.2, 4.9, 4.10, 4.11, 4.12, 6.5, 6.6, 6.8, 7.3, 7.4, 7.5_
 
-- [~] 10. Final checkpoint
+- [x] 10. Final checkpoint
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes
