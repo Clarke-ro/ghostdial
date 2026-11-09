@@ -39,7 +39,7 @@ Implement the browser-based GhostDial phone interface as plain JavaScript, HTML,
     - Make the controller-facing actions carry no user-entered payload so the submission path can supply exact `0` and `00` values.
     - _Requirements: 2.1, 2.3, 2.4, 4.1, 4.2, 4.10, 4.11, 6.5, 7.3_
 
-  - [ ] 1.6 Write Back/Home control-shell tests
+  - [x] 1.6 Write Back/Home control-shell tests
     - Assert exactly one Back button and one Home button exist inside the single enclosure, both are outside the keypad grid, and neither is counted among the twelve Character_Key buttons.
     - Assert button activation normalizes to distinct Back and Home actions and that keypad `0` remains a Character_Key action.
     - _Requirements: 2.1, 2.3, 2.4, 4.1, 4.2, 4.10_
@@ -106,8 +106,8 @@ Implement the browser-based GhostDial phone interface as plain JavaScript, HTML,
     - Verify no audio-file or network-audio path exists and that the no-op service implements the complete injectable contract without timers or browser audio.
     - _Requirements: 1.5, 4.9, 6.2, 6.3, 6.7, 6.9, 7.1, 7.3, 7.5, 8.5_
 
-- [ ] 6. Implement the phone controller and lifecycle state machine
-  - [-] 6.1 Create `src/ui/phone-ui.js`
+- [x] 6. Implement the phone controller and lifecycle state machine
+  - [x] 6.1 Create `src/ui/phone-ui.js`
     - Implement the Back/Home routing and lifecycle gates in line with the design's `phone-ui.js` submission flow and Audio event contract; mount the controls, LCD renderer, keyboard listener, injected transition, mock provider, clock/timer seam, and injected audio service while keeping engine state opaque except for the required question-view check.
     - Initialize idle state with no engine state and an empty buffer; enforce a 160-code-unit input maximum before every append or multi-tap output.
     - Accept on-screen characters, Clear, Call, Back, Home, printable keyboard input, Enter, and Backspace only in interactive states; require an active `CON` screen for Back/Home; commit pending multi-tap before keyboard or submission actions and preserve exact spaces/order/content in submission snapshots.
@@ -120,7 +120,7 @@ Implement the browser-based GhostDial phone interface as plain JavaScript, HTML,
     - Keep mute-toggle handling inside the enclosure but outside the controller action reducer so it changes only audio presentation and accessible mute state; expose deterministic `getSnapshot`, `dispatch`, and `destroy` seams for tests.
     - _Requirements: 1.4, 1.5, 1.6, 1.7, 2.1, 3.1, 3.2, 3.3, 3.4, 3.5, 3.8, 3.9, 3.10, 3.11, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.10, 4.11, 4.12, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 6.11, 6.12, 6.13, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 7.10, 8.1, 8.7_
 
-  - [~] 6.2 Write controller unit tests for input, lifecycle, and audio event gating
+  - [x] 6.2 Write controller unit tests for input, lifecycle, and audio event gating
     - Test idle startup, exact submission arguments and single invocation, synchronous CON adoption, Promise loading, fulfillment, rejection preservation, Clear, Back/Home submissions from an active CON screen, keyboard actions, 160-character capacity, multi-tap timing, END pause, 1,500 ms reset, and destroy cleanup.
     - Seed stale input and pending multi-tap state before Back/Home, then assert each action clears that state before invoking the transition and passes exactly `0` or `00` with the same provider.
     - Assert Back/Home are ignored without transition calls or beeps in Idle, Loading_State, and Ended_Pause_State, while keypad `0` in a question prompt still emits the mapped U+0020 SPACE input and Back/Home remain exact navigation submissions.
@@ -129,7 +129,7 @@ Implement the browser-based GhostDial phone interface as plain JavaScript, HTML,
     - _Requirements: 1.4, 1.5, 1.6, 3.1, 3.2, 3.3, 3.4, 3.8, 3.9, 3.10, 3.11, 4.9, 4.10, 4.11, 4.12, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 6.10, 6.11, 6.12, 6.13, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 7.10, 8.1, 8.7_
 
 - [ ] 7. Complete entry wiring and browser integration
-  - [~] 7.1 Wire `src/ui/main.js` to the real engine, mock provider, audio service, and mounted controller
+  - [x] 7.1 Wire `src/ui/main.js` to the real engine, mock provider, audio service, and mounted controller
     - Import only `next` from `src/engine/ussd.js`, `createMockAIProvider`, `createAudioService`, and `mountPhoneUI`.
     - Mount once under `#app` after the document is ready, start idle without calling the engine or creating `AudioContext`, and pass the injectable audio service into the controller.
     - Ensure no `api/ask.js`, network endpoint, framework runtime, or duplicated menu/screen logic enters the module graph.

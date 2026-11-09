@@ -169,6 +169,21 @@
         "executionId": "066b7934-f3ae-4d06-91f6-31d14d735e6a",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794212417081
+      },
+      {
+        "executionId": "d9e65443-7678-4b4a-8aca-185f69d9aff1",
+        "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
+        "timestamp": 1794213566611
+      },
+      {
+        "executionId": "ea05b89e-2464-4c8b-ac3b-5ff5091f9c5c",
+        "chatSessionId": "sess_f6709c40-5b24-498e-85b2-a4c0d01f946d",
+        "timestamp": 1794213599278
+      },
+      {
+        "executionId": "ea05b89e-2464-4c8b-ac3b-5ff5091f9c5c",
+        "chatSessionId": "sess_f6709c40-5b24-498e-85b2-a4c0d01f946d",
+        "timestamp": 1794214095103
       }
     ],
     "7.1 Wire `src/ui/main.js` to the real engine, mock provider, audio service, and mounted controller": [
@@ -176,6 +191,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794181973091
+      },
+      {
+        "executionId": "623f8054-b45b-4c84-af37-3f9aee428df7",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794214871204
+      },
+      {
+        "executionId": "623f8054-b45b-4c84-af37-3f9aee428df7",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794214981187
       }
     ],
     "10. Final checkpoint": [
@@ -250,6 +275,16 @@
         "executionId": "066b7934-f3ae-4d06-91f6-31d14d735e6a",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794212636799
+      },
+      {
+        "executionId": "969bdd4d-d189-4006-8112-b9b97a593703",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794214339150
+      },
+      {
+        "executionId": "969bdd4d-d189-4006-8112-b9b97a593703",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794214450978
       }
     ],
     "2.2 Write renderer unit and safe-projection tests": [
@@ -325,6 +360,16 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794182997796
+      },
+      {
+        "executionId": "5339a663-e502-4913-96aa-b12922ba0b27",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794214534431
+      },
+      {
+        "executionId": "5339a663-e502-4913-96aa-b12922ba0b27",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794214748187
       }
     ],
     "7.2 Write browser-bound integration tests for the complete UI boundary": [
@@ -451,6 +496,13 @@
         "executionId": "e280e1a7-eafe-4a90-83e5-a6e28551b938",
         "chatSessionId": "sess_7b337c38-4fb7-4339-b9c3-d215584a290d",
         "timestamp": 1794207478319
+      }
+    ],
+    "6. Implement the phone controller and lifecycle state machine": [
+      {
+        "executionId": "5339a663-e502-4913-96aa-b12922ba0b27",
+        "chatSessionId": "sess_984fa68b-b484-4c22-ae84-f7becd935386",
+        "timestamp": 1794214748394
       }
     ]
   }

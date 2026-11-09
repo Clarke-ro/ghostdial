@@ -82,19 +82,28 @@ function isDescendant(element, ancestor) {
 }
 
 describe('Back and Home control shell', () => {
-  it('contains exactly one Back and one Home button outside the keypad', () => {
+  it('contains exactly one Back and one Home button inside the enclosure and outside the keypad', () => {
     const documentRef = new TestDocument();
     const root = documentRef.createElement('main');
     const controls = mountPhoneControls(root, { document: documentRef });
+    const enclosures = elementsWithClass(root, 'retro-phone');
+    const backButtons = elementsWithClass(controls.enclosure, 'back-key');
+    const homeButtons = elementsWithClass(controls.enclosure, 'home-key');
+    const characterButtons = elementsWithClass(controls.keypad, 'character-key');
 
-    expect(elementsWithClass(root, 'retro-phone')).toHaveLength(1);
-    expect(elementsWithClass(controls.enclosure, 'back-key')).toHaveLength(1);
-    expect(elementsWithClass(controls.enclosure, 'home-key')).toHaveLength(1);
-    expect(controls.characterKeys).toHaveLength(12);
-    expect(controls.characterKeys).not.toContain(controls.backKey);
-    expect(controls.characterKeys).not.toContain(controls.homeKey);
-    expect(isDescendant(controls.backKey, controls.enclosure)).toBe(true);
-    expect(isDescendant(controls.homeKey, controls.enclosure)).toBe(true);
+    expect(enclosures).toHaveLength(1);
+    expect(backButtons).toEqual([controls.backKey]);
+    expect(homeButtons).toEqual([controls.homeKey]);
+    expect(controls.backKey.tagName).toBe('BUTTON');
+    expect(controls.homeKey.tagName).toBe('BUTTON');
+    expect(controls.backKey.textContent).toBe('Back');
+    expect(controls.homeKey.textContent).toBe('Home');
+    expect(characterButtons).toHaveLength(12);
+    expect(characterButtons).toEqual(controls.characterKeys);
+    expect(characterButtons).not.toContain(controls.backKey);
+    expect(characterButtons).not.toContain(controls.homeKey);
+    expect(isDescendant(controls.backKey, enclosures[0])).toBe(true);
+    expect(isDescendant(controls.homeKey, enclosures[0])).toBe(true);
     expect(isDescendant(controls.backKey, controls.keypad)).toBe(false);
     expect(isDescendant(controls.homeKey, controls.keypad)).toBe(false);
   });
