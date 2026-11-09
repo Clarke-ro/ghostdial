@@ -197,7 +197,7 @@ describe('Vercel ask handler', () => {
         role: 'user',
         parts: [{ text: '  Explain gravity 👻  ' }],
       }],
-      generationConfig: { maxOutputTokens: 256 },
+      generationConfig: { maxOutputTokens: 400, thinkingConfig: { thinkingBudget: 0 } },
     });
     expect(options.body).not.toContain('ignored');
     expect(options.body).not.toContain('SECRET_HEADER_KEY');

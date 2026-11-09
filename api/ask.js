@@ -195,9 +195,7 @@ function buildGeminiBody({ mode, question }) {
         parts: [{ text: question }],
       },
     ],
-    generationConfig: {
-      maxOutputTokens: 256,
-    },
+    generationConfig: { maxOutputTokens: 400, thinkingConfig: { thinkingBudget: 0 } },
   };
 }
 
