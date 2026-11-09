@@ -16,8 +16,10 @@ export function selectAIProvider({
   realProvider,
   mockProvider,
 }) {
-  const forceMock = new URLSearchParams(search).get('mock') === '1';
-  return !isProduction || forceMock ? mockProvider : realProvider;
+  const params = new URLSearchParams(search);
+  if (params.get('mock') === '1') return mockProvider;
+  if (params.get('real') === '1') return realProvider;
+  return isProduction ? realProvider : mockProvider;
 }
 
 function mount() {
