@@ -142,6 +142,8 @@ export function mountPhoneUI(root, {
       screen,
       inputBuffer: multiTap.getInputBuffer(),
       muted,
+      // Lets the status bar tell an open session (CON) from idle after an error.
+      hasSession: engineState !== null,
     });
     updateNavigationDisabled();
   }

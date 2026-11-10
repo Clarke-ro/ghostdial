@@ -65,6 +65,45 @@ function lifecycleCopy(lifecycle, screenText) {
 }
 
 /**
+ * Short session label for the LCD status bar.
+ *
+ * idle -> IDLE, loading -> DIAL, interactive -> CON, end-pause -> END.
+ * A recoverable error keeps the session open (CON) when one exists,
+ * otherwise the phone is still idle.
+ *
+ * @param {string} lifecycle
+ * @param {boolean} [hasSession=false] true when an engine session is open
+ * @returns {'IDLE'|'DIAL'|'CON'|'END'}
+ */
+export function sessionStateLabel(lifecycle, hasSession = false) {
+  switch (lifecycle) {
+    case 'loading':
+      return 'DIAL';
+    case 'interactive':
+      return 'CON';
+    case 'end-pause':
+      return 'END';
+    case 'error':
+      return hasSession ? 'CON' : 'IDLE';
+    default:
+      return 'IDLE';
+  }
+}
+
+/**
+ * Write the session label into the status bar badge and mirror it as a
+ * `data-state` attribute so CSS can style it.
+ */
+export function renderSessionState(badgeElement, lifecycle, hasSession = false) {
+  const label = sessionStateLabel(lifecycle, hasSession);
+  if (badgeElement) {
+    setText(badgeElement, label);
+    badgeElement.setAttribute?.('data-state', label);
+  }
+  return label;
+}
+
+/**
  * Render literal output text into the LCD output region.
  *
  * The source string is assigned unchanged. CSS `white-space: pre-wrap` is
@@ -174,6 +213,7 @@ export function createRenderer(elements = {}) {
     homeButton,
     inputControls,
     muteButton,
+    sessionStateBadge,
   } = elements;
 
   const output = lcdOutput ?? outputElement;
@@ -184,6 +224,11 @@ export function createRenderer(elements = {}) {
     const screenText = lifecycleCopy(lifecycle, screenTextFrom(state));
 
     renderOutput(output, screenText);
+    const sessionState = renderSessionState(
+      sessionStateBadge,
+      lifecycle,
+      Boolean(state.hasSession),
+    );
     renderInput(input, state.inputBuffer ?? '');
     renderLifecycle({
       lifecycleTarget,
@@ -201,6 +246,7 @@ export function createRenderer(elements = {}) {
 
     return {
       lifecycle,
+      sessionState,
       screenText,
       inputText: boundedInputText(state.inputBuffer ?? ''),
       disabled: state.disabled ?? DISABLED_LIFECYCLES.has(lifecycle),

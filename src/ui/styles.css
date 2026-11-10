@@ -1,18 +1,42 @@
-/* GhostDial's presentation-only phone shell. */
+/* GhostDial's presentation-only phone shell.
+   Look: a haunted retro candybar phone (see docs/design/mockup.png).
+   Nothing in this file changes behaviour; it only styles the DOM built in
+   controls.js and the attributes set by render.js (data-lifecycle etc.). */
 
 :root {
-  color-scheme: light;
-  --page-background: #e8e6dc;
-  --phone-shell: #d2d0c5;
-  --phone-shell-dark: #8d8d83;
-  --phone-edge: #42463f;
-  --phone-text: #20241f;
-  --lcd-background: #173b2b;
-  --lcd-foreground: #c8ffd8;
-  --lcd-muted: #91dba8;
-  --key-background: #f5f3ea;
-  --key-background-active: #d9d6c9;
-  --focus-ring: #174d80;
+  color-scheme: dark;
+
+  /* Page */
+  --page-background: #0b0712;
+  --page-glow: #24123d;
+  --web-color: rgba(214, 200, 255, 0.11);
+
+  /* Phone body */
+  --phone-body-light: #3b3347;
+  --phone-body: #2a2433;
+  --phone-body-dark: #19151f;
+  --phone-edge: #0d0b11;
+  --phone-glow: rgba(150, 90, 255, 0.45);
+
+  /* LCD. The test suite checks these two keep a contrast ratio >= 4.5:1. */
+  --lcd-background: #06140b;
+  --lcd-foreground: #7dff9a;
+  --lcd-dim: #3fa65a;
+  --lcd-glow: rgba(125, 255, 154, 0.55);
+
+  /* Keys */
+  --key-top: #3a3344;
+  --key-bottom: #25202c;
+  --key-border: #4b4157;
+  --key-text: #ece6f4;
+  --key-letters: #a79db6;
+  --call-green: #2f8f4a;
+  --call-green-dark: #1d5c2f;
+  --end-red: #a8323f;
+  --end-red-dark: #6a1f28;
+  --focus-ring: #c39bff;
+
+  --pixel-font: "VT323", "Courier New", Courier, monospace;
 }
 
 * {
@@ -20,169 +44,612 @@
 }
 
 body {
+  position: relative;
   min-width: 18rem;
   min-height: 100vh;
   margin: 0;
   padding: 1.5rem;
-  background: var(--page-background);
-  color: var(--phone-text);
-  font-family: "Courier New", Courier, monospace;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 50%, var(--page-glow) 0%, transparent 70%),
+    var(--page-background);
+  color: var(--key-text);
+  font-family: var(--pixel-font);
+}
+
+/* ---------- Faint cobwebs in the page corners (CSS only) ----------
+   Each web is spokes (repeating conic gradient) plus rings (repeating
+   radial gradient) drawn from a corner, faded out with a mask. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  width: clamp(9rem, 24vw, 17rem);
+  height: clamp(9rem, 24vw, 17rem);
+  pointer-events: none;
+}
+
+body::before {
+  top: 0;
+  left: 0;
+  background:
+    repeating-conic-gradient(from 90deg at 0 0, var(--web-color) 0deg 0.5deg, transparent 0.5deg 11deg),
+    repeating-radial-gradient(circle at 0 0, transparent 0 1.3rem, var(--web-color) 1.3rem calc(1.3rem + 1px));
+  -webkit-mask-image: radial-gradient(circle at 0 0, #000 0 50%, transparent 72%);
+  mask-image: radial-gradient(circle at 0 0, #000 0 50%, transparent 72%);
+}
+
+body::after {
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-conic-gradient(from 270deg at 100% 100%, var(--web-color) 0deg 0.5deg, transparent 0.5deg 11deg),
+    repeating-radial-gradient(circle at 100% 100%, transparent 0 1.3rem, var(--web-color) 1.3rem calc(1.3rem + 1px));
+  -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 0 50%, transparent 72%);
+  mask-image: radial-gradient(circle at 100% 100%, #000 0 50%, transparent 72%);
 }
 
 #app {
+  position: relative;
+  z-index: 1;
   display: grid;
   min-height: calc(100vh - 3rem);
   place-items: center;
 }
 
+/* ---------- Phone body ---------- */
+
 .retro-phone {
-  width: min(100%, 26rem);
-  padding: clamp(1rem, 4vw, 1.75rem);
-  border: 0.35rem solid var(--phone-edge);
-  border-radius: 1.25rem;
-  background: var(--phone-shell);
+  position: relative;
+  width: min(100%, 20.5rem);
+  padding: 0.9rem 1.15rem 1.5rem;
+  overflow: hidden;
+  border: 1px solid #4a405a;
+  border-radius: 2.4rem 2.4rem 3rem 3rem / 2rem 2rem 3.2rem 3.2rem;
+  background: linear-gradient(160deg, var(--phone-body-light) 0%, var(--phone-body) 35%, var(--phone-body-dark) 100%);
   box-shadow:
-    0.45rem 0.45rem 0 var(--phone-shell-dark),
-    inset 0.12rem 0.12rem 0 #f4f2e9,
-    inset -0.12rem -0.12rem 0 #aaa99f;
+    0 0 2.2rem 0.3rem var(--phone-glow),
+    0 0 6rem 1.5rem rgba(110, 50, 210, 0.22),
+    inset 0 2px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -0.5rem 1rem rgba(0, 0, 0, 0.45);
 }
 
+/* Small cobwebs on the phone's top-left and bottom-right corners. */
+.retro-phone::before,
+.retro-phone::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 5.5rem;
+  height: 5.5rem;
+  pointer-events: none;
+}
+
+.retro-phone::before {
+  top: 0;
+  left: 0;
+  background:
+    repeating-conic-gradient(from 90deg at 0 0, var(--web-color) 0deg 0.6deg, transparent 0.6deg 13deg),
+    repeating-radial-gradient(circle at 0 0, transparent 0 0.8rem, var(--web-color) 0.8rem calc(0.8rem + 1px));
+  -webkit-mask-image: radial-gradient(circle at 0 0, #000 0 45%, transparent 70%);
+  mask-image: radial-gradient(circle at 0 0, #000 0 45%, transparent 70%);
+}
+
+.retro-phone::after {
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-conic-gradient(from 270deg at 100% 100%, var(--web-color) 0deg 0.6deg, transparent 0.6deg 13deg),
+    repeating-radial-gradient(circle at 100% 100%, transparent 0 0.8rem, var(--web-color) 0.8rem calc(0.8rem + 1px));
+  -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 0 45%, transparent 70%);
+  mask-image: radial-gradient(circle at 100% 100%, #000 0 45%, transparent 70%);
+}
+
+/* Speaker grille: a dotted slot with three small dots under it. */
+.phone-speaker {
+  position: relative;
+  width: 3.6rem;
+  height: 0.55rem;
+  margin: 0 auto 1rem;
+  border-radius: 0.3rem;
+  background: radial-gradient(circle, #08060b 0 1.3px, transparent 1.8px) 0 0 / 0.36rem 0.27rem;
+}
+
+.phone-speaker::after {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  width: 1.2rem;
+  height: 0.2rem;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #08060b 0 1.3px, transparent 1.8px) 0 0 / 0.4rem 0.2rem;
+}
+
+/* ---------- LCD screen ---------- */
+
 .lcd-display {
+  position: relative;
   display: flex;
-  min-height: 11rem;
-  margin-bottom: 1.25rem;
-  padding: 1rem;
+  min-height: 15.5rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.5rem 0.25rem;
   flex-direction: column;
-  gap: 0.9rem;
-  border: 0.3rem solid var(--phone-edge);
-  border-radius: 0.45rem;
-  background: var(--lcd-background);
+  overflow: hidden;
+  border: 0.45rem solid var(--phone-edge);
+  border-radius: 0.6rem;
+  background: radial-gradient(ellipse at 50% 45%, #0b2615 0%, var(--lcd-background) 75%);
   color: var(--lcd-foreground);
   box-shadow:
-    inset 0.15rem 0.15rem 0 rgba(0, 0, 0, 0.45),
-    inset -0.1rem -0.1rem 0 rgba(200, 255, 216, 0.13);
-  font-size: clamp(0.95rem, 3vw, 1.1rem);
-  line-height: 1.45;
+    inset 0 0 1.2rem rgba(0, 0, 0, 0.85),
+    0 0 0 1px #3d344a,
+    0 0 1.2rem rgba(125, 255, 154, 0.12);
+  font-family: var(--pixel-font);
+  font-size: 1.2rem;
+  line-height: 1.1;
+  text-shadow: 0 0 4px var(--lcd-glow);
   overflow-wrap: anywhere;
+  animation: lcd-flicker 7s infinite;
+}
+
+/* Scanlines drawn over the whole screen. */
+.lcd-display::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+/* Status bar: signal bars, No Data tag, session state, battery. */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(125, 255, 154, 0.25);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.signal-bars {
+  width: 0.85rem;
+  height: 0.7rem;
+  background:
+    linear-gradient(currentColor, currentColor) 0 100% / 2px 25% no-repeat,
+    linear-gradient(currentColor, currentColor) 33% 100% / 2px 50% no-repeat,
+    linear-gradient(currentColor, currentColor) 66% 100% / 2px 75% no-repeat,
+    linear-gradient(currentColor, currentColor) 100% 100% / 2px 100% no-repeat;
+}
+
+.no-data-tag {
+  padding: 0 0.2rem;
+  border: 1px solid currentColor;
+  font-size: 0.85rem;
+}
+
+.session-state {
+  margin-left: auto;
+  letter-spacing: 0.05em;
+}
+
+.battery {
+  position: relative;
+  width: 0.95rem;
+  height: 0.5rem;
+  margin-right: 2px;
+  padding: 1px;
+  border: 1px solid currentColor;
+  background: currentColor;
+  background-clip: content-box;
+}
+
+.battery::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  width: 2px;
+  height: 0.25rem;
+  transform: translateY(-50%);
+  background: currentColor;
+}
+
+/* Main screen area. Exactly one of idle splash, loading splash, or the
+   screen output is visible, chosen by the phone's data-lifecycle. */
+.lcd-body {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .screen-output,
 .input-line {
-  min-height: 1.45em;
+  min-height: 1.1em;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
 .screen-output {
   flex: 1 1 auto;
+  padding: 0 0.25rem;
+}
+
+/* The first line of each CON screen becomes a green title bar: a one-line
+   green band behind the text, and ::first-line turns that text dark. */
+.retro-phone[data-lifecycle="interactive"] .screen-output,
+.retro-phone[data-lifecycle="error"] .screen-output {
+  background: linear-gradient(var(--lcd-foreground), var(--lcd-foreground)) 0 0 / 100% 1.1em no-repeat;
+}
+
+.retro-phone[data-lifecycle="interactive"] .screen-output::first-line,
+.retro-phone[data-lifecycle="error"] .screen-output::first-line {
+  color: var(--lcd-background);
+  text-shadow: none;
 }
 
 .input-line {
-  min-height: 1.45em;
-  padding-top: 0.65rem;
-  border-top: 0.1rem solid var(--lcd-muted);
+  padding: 0.1rem 0.3rem;
+  border: 1px solid rgba(125, 255, 154, 0.55);
   color: var(--lcd-foreground);
 }
+
+/* Blinking cursor after typed input. */
+.retro-phone[data-lifecycle="interactive"] .input-line::after,
+.retro-phone[data-lifecycle="error"] .input-line::after,
+.retro-phone[data-lifecycle="idle"] .input-line:not(:empty)::after {
+  content: "_";
+  animation: cursor-blink 1s steps(1) infinite;
+}
+
+/* Hidden layers: kept out of sight unless their lifecycle is active. */
+.idle-splash,
+.loading-splash {
+  display: none;
+}
+
+/* Visually hide the screen output on idle and loading, where a splash is
+   shown instead. It stays in the accessibility tree for screen readers. */
+.retro-phone[data-lifecycle="idle"] .screen-output,
+.retro-phone[data-lifecycle="loading"] .screen-output {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* ---------- Idle screen ---------- */
+
+.retro-phone[data-lifecycle="idle"] .idle-splash {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  text-align: center;
+  filter: drop-shadow(0 0 3px rgba(125, 255, 154, 0.35));
+}
+
+/* Pixel ghost: an 11 x 10 grid shape cut with clip-path, with two square
+   eyes painted in the screen colour. */
+.pixel-ghost {
+  display: block;
+  width: 44px;
+  height: 40px;
+  margin-bottom: 0.35rem;
+  background:
+    linear-gradient(var(--lcd-background), var(--lcd-background)) 8px 12px / 8px 8px no-repeat,
+    linear-gradient(var(--lcd-background), var(--lcd-background)) 28px 12px / 8px 8px no-repeat,
+    var(--lcd-foreground);
+  clip-path: polygon(
+    27.27% 0%, 72.73% 0%, 72.73% 10%, 90.91% 10%, 90.91% 20%, 100% 20%,
+    100% 100%, 81.82% 100%, 81.82% 90%, 63.64% 90%, 63.64% 100%,
+    36.36% 100%, 36.36% 90%, 18.18% 90%, 18.18% 100%, 0% 100%,
+    0% 20%, 9.09% 20%, 9.09% 10%, 27.27% 10%
+  );
+  animation: ghost-float 2.4s ease-in-out infinite;
+}
+
+/* The title text lives in CSS so the phone shell markup carries no name. */
+.idle-title::before {
+  content: "GhostDial";
+}
+
+.idle-title {
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
+}
+
+.idle-tagline {
+  color: var(--lcd-dim);
+}
+
+.idle-dial {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.idle-code {
+  padding: 0 0.2rem;
+  background: var(--lcd-foreground);
+  color: var(--lcd-background);
+  text-shadow: none;
+}
+
+/* Typed digits on the idle screen look like a number being dialled. */
+.retro-phone[data-lifecycle="idle"] .input-line {
+  border-color: transparent;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* ---------- Loading screen ---------- */
+
+.retro-phone[data-lifecycle="loading"] .loading-splash {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.loading-text {
+  animation: cursor-blink 1.2s steps(1) infinite;
+}
+
+/* TV static: a green noise texture (SVG turbulence) that jumps around in
+   steps, with scanlines on top. */
+.static-noise {
+  display: block;
+  width: 90%;
+  height: 2.6rem;
+  border: 1px dashed rgba(125, 255, 154, 0.4);
+  background-image:
+    repeating-linear-gradient(to bottom, rgba(6, 20, 11, 0.55) 0 1px, transparent 1px 2px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.49 0 0 0 0 1 0 0 0 0 0.6 0 0 0 1.4 -0.45'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  image-rendering: pixelated;
+  animation: static-jitter 0.45s steps(1) infinite;
+}
+
+.static-caption {
+  color: var(--lcd-dim);
+}
+
+.retro-phone[data-lifecycle="loading"] .input-line,
+.retro-phone[data-lifecycle="end-pause"] .input-line {
+  visibility: hidden;
+}
+
+/* ---------- END screen: the line fades out ---------- */
+
+.retro-phone[data-lifecycle="end-pause"] .screen-output {
+  flex: 0 0 auto;
+  margin-block: auto 0;
+  color: var(--lcd-dim);
+  text-align: center;
+  text-shadow: none;
+}
+
+.retro-phone[data-lifecycle="end-pause"] .lcd-body::after {
+  content: "[session ended]";
+  margin-bottom: auto;
+  color: var(--lcd-dim);
+  text-align: center;
+}
+
+/* Soft-key labels along the bottom edge of the LCD. */
+.softkey-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+  padding-top: 0.15rem;
+  border-top: 1px solid rgba(125, 255, 154, 0.25);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.softkey-label-mid {
+  color: var(--lcd-dim);
+}
+
+/* Back and Home only work on an active CON screen; dim their labels otherwise. */
+.retro-phone:not([data-lifecycle="interactive"]) .softkey-label-side {
+  opacity: 0.35;
+}
+
+/* ---------- Buttons (shared) ---------- */
+
+button {
+  min-height: 1.85rem;
+  padding: 0;
+  border: 1px solid var(--key-border);
+  border-radius: 0.9rem / 0.8rem;
+  background: linear-gradient(to bottom, var(--key-top), var(--key-bottom));
+  color: var(--key-text);
+  font-family: var(--pixel-font);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow:
+    0 2px 0 #110e15,
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 80ms ease, box-shadow 80ms ease, filter 80ms ease;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.18);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow:
+    0 1px 0 #110e15,
+    0 0 0.6rem rgba(160, 100, 255, 0.55);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Disabled controls stay visibly disabled through opacity and cursor,
+   not colour alone. Their accessible names are unchanged. */
+button:disabled,
+button[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  filter: grayscale(0.6);
+}
+
+/* ---------- Soft keys, mute, call and clear ---------- */
+
+.phone-actions {
+  display: grid;
+  grid-template-areas:
+    "back mute home"
+    "call .    clear";
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 0.5rem 1.4rem;
+  margin: 0 0.35rem 0.9rem;
+}
+
+.back-key { grid-area: back; }
+.mute-key { grid-area: mute; }
+.home-key { grid-area: home; }
+.call-key { grid-area: call; }
+.clear-key { grid-area: clear; }
+
+/* Back, Home and Mute show no printed text (their labels are on the LCD),
+   but the button text stays as the accessible name. */
+.back-key,
+.home-key,
+.mute-key {
+  color: transparent;
+  font-size: 0;
+}
+
+.back-key,
+.home-key {
+  min-height: 0.95rem;
+  height: 0.95rem;
+  border-radius: 0.5rem;
+}
+
+/* Centre key: an oval with a status dot (green = sound on, red = muted). */
+.mute-key {
+  position: relative;
+  min-height: 1.9rem;
+  border-radius: 1rem;
+}
+
+.mute-key::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.9rem;
+  height: 0.4rem;
+  transform: translate(-50%, -50%);
+  border-radius: 0.2rem;
+  background: var(--lcd-foreground);
+  box-shadow: 0 0 6px var(--lcd-glow);
+}
+
+.mute-key[aria-pressed="true"]::before {
+  background: #ff5d6c;
+  box-shadow: 0 0 6px rgba(255, 93, 108, 0.6);
+}
+
+.call-key,
+.clear-key {
+  min-height: 1.4rem;
+  font-size: 1.05rem;
+}
+
+.call-key {
+  border-color: #3fb562;
+  background: linear-gradient(to bottom, var(--call-green), var(--call-green-dark));
+  color: #e9ffef;
+}
+
+.call-key::before {
+  content: "\2706  ";
+}
+
+.clear-key {
+  border-color: #d0505e;
+  background: linear-gradient(to bottom, var(--end-red), var(--end-red-dark));
+  color: #ffecee;
+}
+
+/* ---------- Number keypad ---------- */
 
 .keypad {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: minmax(3.25rem, auto);
-  gap: 0.65rem;
-  margin-bottom: 0.9rem;
+  gap: 0.5rem 0.7rem;
+  margin: 0 0.15rem;
 }
 
-.phone-actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-}
-
-.phone-actions .mute-key {
-  grid-column: 1 / -1;
-}
-
-button {
-  min-height: 3rem;
-  border: 0.15rem solid var(--phone-edge);
-  border-radius: 0.45rem;
-  background: var(--key-background);
-  color: var(--phone-text);
-  font: inherit;
-  font-weight: 700;
-  line-height: 1.15;
-  cursor: pointer;
-  box-shadow: 0.18rem 0.18rem 0 var(--phone-shell-dark);
-  transition: transform 80ms ease, box-shadow 80ms ease;
-}
-
-button:hover:not(:disabled) {
-  background: #fffef8;
-}
-
-button:active:not(:disabled) {
-  transform: translate(0.12rem, 0.12rem);
-  box-shadow: 0.06rem 0.06rem 0 var(--phone-shell-dark);
-}
-
-button:focus-visible {
-  outline: 0.2rem solid var(--focus-ring);
-  outline-offset: 0.15rem;
-}
-
+/* Number plus small letters (letters come from data-letters). */
 .character-key {
-  min-height: 3.4rem;
-  font-size: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.3rem;
 }
 
-.call-key,
-.home-key {
-  background: #e4f2e1;
+.character-key::after {
+  content: attr(data-letters);
+  color: var(--key-letters);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
 }
 
-.clear-key,
-.back-key {
-  background: #f2e9d6;
+/* ---------- Animations ---------- */
+
+@keyframes lcd-flicker {
+  0%, 91%, 94%, 97%, 100% { opacity: 1; }
+  92% { opacity: 0.88; }
+  96% { opacity: 0.94; }
 }
 
-.mute-key {
-  min-height: 2.75rem;
-  font-size: 0.9rem;
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-/* Disabled controls remain visibly disabled through shape, opacity, and cursor,
-   rather than color alone. Their text labels remain available to users. */
-button:disabled,
-button[aria-disabled="true"] {
-  opacity: 0.48;
-  filter: grayscale(1);
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
+@keyframes ghost-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
 }
 
-.retro-phone[data-lifecycle="loading"] .lcd-display {
-  outline: 0.15rem dashed var(--lcd-muted);
-  outline-offset: -0.45rem;
+@keyframes static-jitter {
+  0% { background-position: 0 0, 0 0; }
+  20% { background-position: 0 1px, -37px 11px; }
+  40% { background-position: 0 0, 23px -29px; }
+  60% { background-position: 0 1px, -51px -7px; }
+  80% { background-position: 0 0, 13px 41px; }
+  100% { background-position: 0 1px, 0 0; }
 }
 
-.retro-phone[data-lifecycle="loading"] .phone-actions::after {
-  content: "Input disabled while connecting";
-  grid-column: 1 / -1;
-  color: var(--phone-text);
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-.mute-key[aria-pressed="true"] {
-  border-style: dashed;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-}
-
-.mute-key[aria-pressed="true"]::before {
-  content: "[muted] ";
-}
+/* ---------- Small screens ---------- */
 
 @media (max-width: 25rem) {
   body {
@@ -194,22 +661,25 @@ button[aria-disabled="true"] {
   }
 
   .retro-phone {
-    padding: 0.85rem;
-    border-width: 0.25rem;
+    padding: 0.8rem 0.85rem 1.2rem;
   }
 
-  .lcd-display {
-    min-height: 9.5rem;
-    padding: 0.8rem;
+  .phone-actions {
+    gap: 0.45rem 0.9rem;
   }
 
   .keypad {
-    gap: 0.5rem;
+    gap: 0.45rem 0.5rem;
   }
 }
 
+/* ---------- Reduced motion: no flicker, blinking, floating or static ---------- */
+
 @media (prefers-reduced-motion: reduce) {
-  button {
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
